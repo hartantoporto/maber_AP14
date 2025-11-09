@@ -10,20 +10,18 @@ def main_menu():
         text_left("Menu Utama:")
         text_left("1. Mulai Permainan ⚔️")
         text_left("2. Lihat Peringkat 🏆")
-        text_left("3. Lihat Profil 👤")
-        text_left("4. Keluar Aplikasi 🚪")
+        text_left("3. Keluar Aplikasi 🚪")
         space()
-        choice = input("Pilih opsi (1-4): ")
+        choice = input("Pilih opsi (1-3): ")
         line()
         if choice == "1":
-            from category.menu import chooseCategory
+            from play.menu import chooseCategory
             chooseCategory()
         elif choice == "2":
             # Leaderboard
             from rank.leaderboard import Show_LeaderBoard
             Show_LeaderBoard()
-
-        elif choice == "4":
+        elif choice == "3":
             goodbye_banner()
             break
             

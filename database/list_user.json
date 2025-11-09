@@ -28,10 +28,17 @@
         "password": "$2b$12$L4YNzbxlQulVmPQsUd4pmuVgowz2K0p58beqelmGn92klY70fV0mW",
         "total_level": 60,
         "title": "Legendary"
+    },
     "aku123": {
         "username": "aku123",
         "password": "$2b$12$pVcM32VngXNVbq50SFeNwutMY6SMfKGgXXgb/LN7.yuD7z7ygrZJm",
         "total_level": 0,
         "title": "bronze"
+    },
+    "hambaallah": {
+        "username": "hambaallah",
+        "password": "$2b$12$91YFOgtwtlJnt1qGeiTVXOsaL5Et1m2Pq.R/A6ObLu/v20eJtIl0e",
+        "total_level": 11,
+        "title": "Tingkat 1 = Bronze"
     }
 }

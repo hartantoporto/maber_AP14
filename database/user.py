@@ -2,56 +2,56 @@ import json
 import os
 
 import bcrypt
-
-from database.getjson import get_json
+import database.config as config
+from database.getjson import get_json, JSON as JSON_PATH
 from ui_utils import error, success
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-JSON = os.path.join(BASE_DIR, "list_user.json")
 
 def check_user(username, password):
     data = get_json()
 
     if username in data:
-        stored_hashed = data[username]["password"]
-        if bcrypt.checkpw(password.encode('utf-8'), stored_hashed.encode('utf-8')):
+        stored_hashed = data[username].get("password")
+        if stored_hashed and bcrypt.checkpw(password.encode('utf-8'), stored_hashed.encode('utf-8')):
+            config.player_name = username
+            config.current_level = data[username].get("total_level", 0)
             success("Login berhasil!")
             return True
         else:
             error("Password salah!")
-            return 
+            return False
     else:
         error("Pengguna tidak ditemukan!")
-        return 
+        return False
 
 def create_user(username, password):
     data = get_json()
 
-    if username in data:
-        error("Pengguna sudah ada!")
-        return 
-    else:
+    if username not in data:
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
         data[username] = {
             "username": username,
             "password": hashed_password.decode('utf-8'),
             "total_level": 0,
-            "title": "bronze"
+            "title": ""
         }
-        with open(JSON, "w") as json_file:
+        with open(JSON_PATH, "w") as json_file:
             json.dump(data, json_file, indent=4)
         return True
-        
+    else:
+        error("Pengguna sudah ada!")
+        return False
         
 def update_user(username, level, title):
     data = get_json()
 
-    if (username in data):
-        new_data = {
-        "username": username,
-        "total_level": level,
-        "title": title
-    }
-        data[username] = new_data  
-        with open(JSON, "w") as json_file:
-            json.dump(data, json_file)
+    if username in data:
+        user = data[username]
+        user["total_level"] = level
+        user["title"] = title
+        data[username] = user
+        with open(JSON_PATH, "w") as json_file:
+            json.dump(data, json_file, indent=4)
+        return True
+    else:
+        error("Pengguna tidak ditemukan!")
+        return False

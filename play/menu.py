@@ -1,7 +1,9 @@
 from ui_utils import info, line, space, text_left, warning
-
+import database.config as config
 
 def chooseCategory():
+    current_level = config.current_level
+    
     while True:
         space()
         text_left("Pilih Kategori Soal:")
@@ -18,6 +20,18 @@ def chooseCategory():
 
         elif choice == "2":
             info("Kamu memilih kategori Teka Teki Gambar.")
+            if current_level == 0:    
+                from tutorial.tutorial import tutorial_tekateki_gambar
+                result = tutorial_tekateki_gambar()
+                if result == True:
+                    import level.level as level
+                    level.progres_level("Teka Teki Gambar")
+                    break
+                else:
+                    break
+            else :
+                import level.level as level
+                level.progres_level("Teka Teki Gambar")
 
         elif choice == "3":
             info("Kamu memilih kategori Deret Angka.")

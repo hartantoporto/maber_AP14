@@ -30,5 +30,3 @@ def Show_LeaderBoard():
         print(f"#{index:<3} | {username:<15} | Level: {level:<5} | Title: {title}")
     
     print("-----------------------------")
-
-Show_LeaderBoard()

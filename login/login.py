@@ -79,6 +79,6 @@ def signup_user():
         except ValueError as error:
             print(error)
 
-    create_user(username, password)
-    if create_user(username, password) == True:
+    result = create_user(username, password)
+    if result == True:
         return True
