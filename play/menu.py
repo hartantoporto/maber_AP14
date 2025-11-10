@@ -35,6 +35,13 @@ def chooseCategory():
 
         elif choice == "3":
             info("Kamu memilih kategori Deret Angka.")
+            from tutorial.tutorial import tutorial_barisan_deret
+            result = tutorial_barisan_deret()
+            if result:
+                from play.category.sequence.main_sequence import main_sequence
+                main_sequence()
+                break
+
 
         elif choice == "4":
             info("Kembali ke Menu Utama.")
