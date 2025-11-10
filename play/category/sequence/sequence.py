@@ -68,6 +68,8 @@ def generate_question(level):
 def show_question(level):
     q_data = generate_question(level)
     soal = q_data["q"]
+    jawaban = q_data["a"]
+    solusi = q_data["solusi"]
 
     for key, value in EMOJI.items():
         placeholder = f"{{{key}}}"
@@ -81,6 +83,4 @@ def show_question(level):
     print(soal)
     space()
     line()
-    info(f"Jawaban: {q_data['a']}")
-    success(f"Solusi: {q_data['solusi']}")
-    line()
+    return [jawaban, solusi]

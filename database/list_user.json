@@ -37,8 +37,26 @@
     },
     "hambaallah": {
         "username": "hambaallah",
-        "password": "$2b$12$91YFOgtwtlJnt1qGeiTVXOsaL5Et1m2Pq.R/A6ObLu/v20eJtIl0e",
-        "total_level": 11,
-        "title": "Tingkat 1 = Bronze"
+        "password": "$2b$12$6oHpF7dovQRV6IrmU.03BOb9V8yLGKIsSBgkh3rlKBRA1RGgv9YaC",
+        "total_level": 0,
+        "current_riddle_level": 0,
+        "current_riddle_lives": 0,
+        "current_arithmetic_level": 0,
+        "current_arithmetic_lives": 0,
+        "current_sequence_level": 0,
+        "current_sequence_lives": 0,
+        "title": ""
+    },
+    "sintara1": {
+        "username": "sintara1",
+        "password": "$2b$12$foDjmetjzLp2jUGh/oPOTuE.1b9nqQ70zoISBLmlQes4CowVDG75i",
+        "total_level": 1,
+        "current_riddle_level": 0,
+        "current_riddle_lives": 0,
+        "current_arithmetic_level": 0,
+        "current_arithmetic_lives": 0,
+        "current_sequence_level": 0,
+        "current_sequence_lives": 0,
+        "title": ""
     }
 }

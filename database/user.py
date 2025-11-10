@@ -2,9 +2,12 @@ import json
 import os
 
 import bcrypt
+
 import database.config as config
-from database.getjson import get_json, JSON as JSON_PATH
+from database.getjson import JSON as JSON_PATH
+from database.getjson import get_json
 from ui_utils import error, success
+
 
 def check_user(username, password):
     data = get_json()
@@ -32,6 +35,12 @@ def create_user(username, password):
             "username": username,
             "password": hashed_password.decode('utf-8'),
             "total_level": 0,
+            "current_riddle_level": 0,
+            "current_riddle_lives": 0,
+            "current_arithmetic_level": 0,
+            "current_arithmetic_lives": 0,
+            "current_sequence_level": 0,
+            "current_sequence_lives": 0  ,
             "title": ""
         }
         with open(JSON_PATH, "w") as json_file:
@@ -55,3 +64,6 @@ def update_user(username, level, title):
     else:
         error("Pengguna tidak ditemukan!")
         return False
+    
+def logout():
+    config.player_name = ""

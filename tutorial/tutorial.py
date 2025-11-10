@@ -1,127 +1,173 @@
-def tutorial_hitung_campuran():
-    print("=" * 80)
-    print("  TUTORIAL: Aritmatika Dasar")
-    print("=" * 80)
-    print("\nDalam operasi hitung campuran, urutan pengerjaan sangat penting.")
-    print("Aturan yang harus diikuti adalah 'KuKaBaTaKu':")
-    print("\n1. KURUNG ()")
-    print("   - Kerjakan semua operasi di dalam tanda kurung terlebih dahulu.")
-    print("   - Contoh: 10 + (5 - 2) -> Kerjakan (5 - 2) dulu jadi 3.")
-    
-    print("\n2. KALI (x) dan BAGI (:)")
-    print("   - Setelah kurung, kerjakan perkalian dan pembagian.")
-    print("   - Keduanya sama kuat, kerjakan dari yang paling kiri.")
-    print("   - Contoh: 10 + 4 x 2 -> Kerjakan 4 x 2 dulu jadi 8.")
-    print("   - Contoh: 12 : 2 x 3 -> Kerjakan 12 : 2 dulu jadi 6, baru 6 x 3 = 18.")
-
-    print("\n3. TAMBAH (+) dan KURANG (-)")
-    print("   - Terakhir, kerjakan pertambahan dan pengurangan.")
-    print("   - Keduanya sama kuat, kerjakan dari yang paling kiri.")
-    
-    print("\n--- CONTOH LENGKAP ---")
-    print("Soal: 5 + ( 10 - 2 ) x 3 : 4 - 1")
-    print("1. Kurung: 5 + (8) x 3 : 4 - 1")
-    print("2. Kali/Bagi (dari kiri):")
-    print("   - Kali: 5 + 24 : 4 - 1")
-    print("   - Bagi: 5 + 6 - 1")
-    print("3. Tambah/Kurang (dari kiri):")
-    print("   - Tambah: 11 - 1")
-    print("   - Kurang: 10")
-    print("\nHasil Akhir: 10")
-    print("\n========================================")
-
-def tutorial_tekateki_gambar():
-    print("=" * 80)
-    print("   TUTORIAL: Teka-Teki Gambar dan Operasi")
-    print("=" * 80)
-    print("\nJenis soal ini menantang Anda untuk menemukan nilai setiap bentuk")
-    print("berdasarkan pola operasi matematika yang diberikan ( + , - , × , ÷ ).")
-    print("Setiap bentuk (misalnya ◼, ▲, ●, ◆, ○) mewakili nilai angka tertentu.")
-    
-    print("\nCara Mengerjakan:")
-    print("1. Perhatikan Bentuk dan Operasi")
-    print("   - Tiap soal menggunakan simbol-simbol acak seperti ◼, ▲, ●, ◆, ○.")
-    print("   - Setiap simbol punya nilai berbeda.")
-    print("   - Soal ditulis seperti:  ◼ + ▲ = ?  atau  ● × ◼ ÷ ▲ = ?")
-
-    print("\n2. Gunakan Petunjuk (Hint) untuk Menemukan Nilai Simbol")
-    print("   - Tiap hint menunjukkan hubungan antar bentuk dengan hasil hitungan.")
-    print("   - Contoh hint:  ◼ + ◼ + ◼ = 9  → berarti nilai ◼ = 3.")
-    print("   - Gunakan semua hint yang tersedia untuk menentukan nilai setiap bentuk.")
-
-    print("\n3. Substitusi Nilai ke Dalam Soal Utama")
-    print("   - Setelah tahu nilai tiap bentuk, gantikan simbol pada soal.")
-    print("   - Lakukan operasi matematika sesuai urutan (ingat urutan operasi: ×/÷ lebih dulu).")
-
-    print("\n4. Hasilkan Jawaban Akhir")
-    print("   - Hitung hasil akhir setelah semua simbol diganti nilainya.")
-    print("   - Beberapa soal mungkin melibatkan operasi campuran ( + , - , × , ÷ ).")
-
-    print("\n--- CONTOH ---")
-    print("Soal:   ◼ + ▲ = ?")
-    print("Petunjuk:")
-    print("  ◼ + ◼ + ◼ = 9")
-    print("  ▲ + ▲ + ▲ = 6")
-    print("Analisis:")
-    print("  Dari hint pertama → ◼ = 3")
-    print("  Dari hint kedua   → ▲ = 2")
-    print("Substitusi ke soal utama → 3 + 2 = 5")
-    print("Jawaban: 5")
-
-    print("\n--- CATATAN TAMBAHAN ---")
-    print("• Pada level lebih tinggi, operasi bisa lebih rumit (campuran +, -, ×, ÷).")
-    print("• Beberapa hint menunjukkan pola kombinasi, bukan nilai langsung.")
-    print("• Fokuslah pada hubungan antar bentuk, bukan pada angka di hint saja.")
-    print("• Gunakan logika dan perhatikan urutan operasi.")
-
-    print("\nSelamat berpikir dan temukan pola tersembunyi di balik simbol-simbol tersebut!")
-    print("=" * 80)
-    
-    continuePlay = input("Ingin memulai permainan Teka-Teki Gambar? (y): ")
-    if continuePlay.lower() == 'y':
-        return True
-    else:
-        return False
+import random
+import sys
+import time
 
 
-def tutorial_barisan_deret():
-    if getattr(tutorial_barisan_deret, "_done", False):
-        return True 
-    print("=" * 80)
-    print("    TUTORIAL: Matematika Barisan & Deret")
-    print("=" * 80)
-    
-    print("\nApa itu Barisan dan Deret?")
-    print("- Barisan: urutan angka dengan pola tertentu.")
-    print("  Contoh mudah:")
-    print("    1, 2, 3, 4, 5 -> setiap suku bertambah +1 (aritmetika)")
-    print("    2, 4, 8, 16 -> setiap suku dikali 2 (geometri)")
-    print("    1, 1, 2, 3, 5 -> jumlah 2 suku sebelumnya (Fibonacci)")
+def typeplay(text):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(random.uniform(0.01, 0.04))
+    time.sleep(0.15)
 
-    print("\n- Deret: jumlah dari suku-suku barisan tersebut.")
-    print("  Contoh mudah:")
-    print("    Barisan: 1,2,3,4,5 -> Deret: 1+2+3+4+5 = 15")
-    
-    print("\nContoh soal cerita sederhana:")
-    print("- Ani menaruh 1 kelereng di hari pertama, 2 di hari kedua, 3 di hari ketiga, dan seterusnya.")
-    print("  Pertanyaannya: Berapa kelereng yang Ani miliki di hari ke-5?")
-    print("  Tips: ubah kata menjadi angka -> 1,2,3,4,5 -> pola tambah +1 -> jawab 5 kelereng")
-    
-    print("- Bola ajaib yang bertambah 2 tiap menit: 2 bola, 4 bola, 6 bola,...")
-    print("  Pertanyaannya: Berapa bola di menit ke-4?")
-    print("  Tips: Perhatikan pola aritmetika (+2) -> jawab 8 bola")
-    
-    print("\nTips cepat menyelesaikan soal cerita:")
-    print("- Ubah kata-kata menjadi angka dulu.")
-    print("- Tentukan pola: tambah tetap (aritmetika) atau kali tetap (geometri).")
-    print("- Perhatikan pola bergantian atau campuran jika ada.")
-    
-    print("=" * 80)
-    
-    start = input("Ingin memulai permainan Barisan dan Deret? (y/n): ").lower().strip()
-    while start not in ('y', 'n'):
-        print("Pilih 'y' atau 'n' saja!")
-        start = input("Ingin memulai permainan Barisan dan Deret? (y/n): ").lower().strip()
+def arithmetic_tutorial():
+    print("\n==========================================")
+    typeplay("   🎓 TUTORIAL MASTER ARITMATIKA 🎓\n")
+    print("==========================================\n")
+    typeplay("Misi Anda adalah menaklukkan berbagai tantangan numerik.\n")
+    typeplay("Dari hitungan dasar hingga teka-teki cerita yang menjebak.\n\n")
+    input("[Tekan Enter untuk lanjut...]")
 
-    tutorial_barisan_deret._done = True
-    return start == 'y'
+    typeplay("\n=== BAGIAN 1: HUKUM MATEMATIKA (KABATAKU) ===\n")
+    typeplay("Di sini, urutan itu SANGAT PENTING. Ingat aturan 'KABATAKU':\n")
+    typeplay("1. KAli dan BAgi dikerjakan LEBIH DULU dari TAmbah dan KUrang.\n")
+    typeplay("2. TAPI! Jika ada tanda kurung ( ), mereka adalah VIP. Kerjakan duluan!\n\n")
+    typeplay("Contoh:\n")
+    typeplay("   4 + 3 x 2 = ?\n")
+    typeplay("   JANGAN jawab 14! Yang benar adalah 4 + 6 = 10. (di sini KALI di kerjakan terlebih dahulu)\n")
+    typeplay("Contoh VIP:\n")
+    typeplay("   (4 + 3) x 2 = 7 x 2 = 14. (Kurung menang!)\n\n")
+    typeplay("Tips Pro: Jika levelnya setara (misal KALI dan BAGI), kerjakan dari KIRI ke KANAN.\n")
+    typeplay("   36 / 2 x 3 = 18 x 3 = 54.\n\n")
+    input("[Tekan Enter untuk lanjut...]")
+
+    typeplay("\n=== BAGIAN 2: HURUF MISTERIUS (VARIABEL) ===\n")
+    typeplay("Terkadang angka menyamar menjadi huruf (x, y, a, b).\n")
+    typeplay("Tugasmu adalah membuka samarannya atau menemukannya.\n\n")
+    typeplay("Tipe 1: Substitusi (Ganti Nilai)\n")
+    typeplay("   Jika diketahui x = 3. Berapa nilai 2x + 1?\n")
+    typeplay("   Artinya: 2 dikali (3) ditambah 1 = 6 + 1 = 7.\n")
+    typeplay("Tipe 2: Mencari 'x'\n")
+    typeplay("   x + 5 = 12\n")
+    typeplay("   Agar 'x' sendirian, pindahkan +5 ke seberang menjadi -5.\n")
+    typeplay("   x = 12 - 5, maka x = 7.\n\n")
+    input("[Tekan Enter untuk lanjut...]")
+
+    typeplay("\n=== BAGIAN 3: SOAL CERITA ===\n")
+    typeplay("Musuh terakhir adalah soal cerita. Senjatamu adalah LOGIKA.\n")
+    typeplay("Untuk menjawab soal cerita Baca, Pahami dan Terjemahkan ke bahasa matematika.\n")
+    typeplay("Contoh:\n")
+    typeplay("   'Harga 2 pulpen adalah Rp6.000'\n")
+    typeplay("   Terjemahan: 2 x P = 6000. Berarti 1 pulpen (P) = 3000.\n\n")
+    input("[Tekan Enter untuk bersiap...]")
+
+    print("\n==========================================")
+    typeplay("           TUTORIAL SELESAI\n")
+    print("==========================================\n")
+    while True:
+        lanjut_ulang_arithmetic = input("Tekan [Enter] untuk memulai! Ketik [Ulang] untuk melihat ulang tutorial: ")
+        if lanjut_ulang_arithmetic == "":
+            break
+        elif lanjut_ulang_arithmetic.lower() == "ulang":
+            arithmetic_tutorial()
+        else:
+            print("Input tidak dikenal! Silahkan hanya tekan Enter atau ketik 'Ulang'.")
+
+def riddle_tutorial():
+    print("\n==========================================")
+    typeplay("   🎓 TUTORIAL MASTER TEKA-TEKI MATEMATIKA 🎓\n")
+    print("==========================================\n")
+    typeplay("Misi Anda adalah memecahkan nilai dibalik simbol-simbol misterius.\n")
+    typeplay("Setiap bentuk (◼, ▲, ●, ◆, ○) mewakili sebuah ANGKA yang unik.\n\n")
+    input("[Tekan Enter untuk lanjut...]")
+
+    typeplay("\n=== BAGIAN 1: DASAR ===\n")
+    typeplay("Anda harus menemukan nilai simbol dari PETUNJUK yang diberikan.\n")
+    typeplay("Contoh Petunjuk 1:\n")
+    typeplay("   ◼ + ◼ = 10\n")
+    typeplay("Artinya: Dua buah ◼ jika dijumlahkan hasilnya 10.\n")
+    typeplay("Maka, nilai satu ◼ adalah 5.\n\n")
+    input("[Tekan Enter untuk lanjut...]")
+
+    typeplay("\n=== BAGIAN 2: PETUNJUK LANJUT ===\n")
+    typeplay("Di level yang lebih tinggi, petunjuk mungkin terlihat seperti ini:\n")
+    typeplay("   ▲ * ▲ * ▲ = 27\n")
+    typeplay("Jangan panik! Ini artinya sebuah angka dikalikan dengan dirinya sendiri 3 kali hasilnya 27.\n")
+    typeplay("3 x 3 x 3 = 27.\n")
+    typeplay("Jadi, nilai ▲ adalah 3.\n")
+    typeplay("Petunjuk lain:\n")
+    typeplay("   ● + ● + ● = 15  -> Artinya 3 x ● = 15, jadi ● = 5.\n\n")
+    input("[Tekan Enter untuk lanjut...]")
+
+    typeplay("\n=== BAGIAN 3: MENYELESAIKAN MISI ===\n")
+    typeplay("Setelah menemukan nilai semua simbol, selesaikan soal utamanya.\n")
+    typeplay("Jika kita tahu:\n")
+    typeplay("   ◼ = 5")
+    typeplay("   ▲ = 3")
+    typeplay("\nMaka Pertanyaan:\n")
+    typeplay("   ◼ + ▲ = ?\n")
+    typeplay("\nJawabannya adalah 8 (karena 5 + 3 = 8).\n\n")
+    input("[Tekan Enter untuk bersiap...]")
+
+    print("\n==========================================")
+    typeplay("           TUTORIAL SELESAI\n")
+    print("==========================================\n")
+    while True:
+        lanjut_ulang_riddle = input("Tekan [Enter] untuk memulai! Ketik [Ulang] untuk melihat ulang tutorial: ")
+        if lanjut_ulang_riddle == "":
+            return True
+        elif lanjut_ulang_riddle.lower() == "ulang":
+            riddle_tutorial()
+        else:
+            print("Input tidak dikenal! Silahkan hanya tekan Enter atau ketik 'Ulang'.")
+
+def sequence_tutorial():
+    print("\n==========================================")
+    typeplay("   🎓 TUTORIAL MASTER BARIS DERET ANGKA 🎓\n")
+    print("==========================================\n")
+    typeplay("Misi Anda: Menemukan angka yang hilang berdasarkan POLA tersembunyi.\n")
+    typeplay("Ada 4 Kunci yang harus dikuasai untuk menaklukkan semua soal.\n\n")
+    input("[Tekan Enter untuk mempelajari Bagian 1...]")
+
+    typeplay("\n=== BAGIAN 1: POLA DASAR (TETAP) ===\n")
+    typeplay("Cek selisih antar angka. Apakah selalu sama?\n")
+    typeplay("🔹 Aritmatika (Tambah/Kurang):\n")
+    typeplay("   Contoh: 2, 4, 6, 8... (Selalu +2)\n")
+    typeplay("   -> Angka berikutnya: 8 + 2 = 10\n")
+    typeplay("🔹 Geometri (Kali/Bagi):\n")
+    typeplay("   Contoh: 3, 6, 12, 24... (Selalu dikali 2)\n")
+    typeplay("   -> Angka berikutnya: 24 x 2 = 48\n")
+    typeplay("Tips: Level 1-8 dan 10 menggunakan pola ini!\n\n")
+    input("[Tekan Enter untuk lanjut ke Bagian 2...]")
+
+    typeplay("\n=== BAGIAN 2: POLA BILANGAN KHUSUS ===\n")
+    typeplay("Kadang polanya bukan tambah/kali biasa, tapi pola unik:\n")
+    typeplay("⭐ Pola Kuadrat (Pangkat 2):\n")
+    typeplay("   1, 4, 9, 16... -> Ini adalah 1², 2², 3², 4².\n")
+    typeplay("   Selanjutnya 5² = 25.\n")
+    typeplay("🌛 Pola Fibonacci (Jumlah 2 angka sebelumnya):\n")
+    typeplay("   1, 1, 2, 3, 5... -> (1+1=2), (1+2=3), (2+3=5).\n")
+    typeplay("   Selanjutnya 3+5 = 8.\n")
+    typeplay("❗ Pola Faktorial (Pengali makin besar):\n")
+    typeplay("   1, 2, 6, 24... -> (x2, x3, x4).\n")
+    typeplay("   Selanjutnya dikali 5 -> 24 x 5 = 120.\n\n")
+    input("[Tekan Enter untuk lanjut ke Bagian 3...]")
+
+    typeplay("\n=== BAGIAN 3: POLA KOMBINASI (SELANG-SELING) ===\n")
+    typeplay("Level tinggi sering menjebak! Jika pola biasa tidak ketemu, coba ini:\n")
+    typeplay("🅰️ Dua Operasi Bergantian:\n")
+    typeplay("   Contoh: 2, 4, 5, 10, 11...\n")
+    typeplay("   Polanya: (x2), (+1), (x2), (+1)...\n")
+    typeplay("🅱️ Pola Lompat (Ganjil & Genap beda jalur):\n")
+    typeplay("   Contoh: 1, 9, 2, 16, 3, 25...\n")
+    typeplay("   Posisi Ganjil: 1, 2, 3... (Maju +1)\n")
+    typeplay("   Posisi Genap: 9, 16, 25... (Bilangan kuadrat)\n")
+    input("[Tekan Enter untuk lanjut...]")
+
+    typeplay("\n=== BAGIAN 4: MEMBACA SOAL CERITA 📖 ===\n")
+    typeplay("Jangan panik dengan teks panjang. Ubah cerita menjadi deret angka!\n")
+    typeplay("Contoh: 'Setiap hari Budi meminjam 2 buku lebih banyak...'\n")
+    typeplay("-> Artinya: +2 setiap hari (Deret Aritmatika: 2, 4, 6...).\n")
+    input("[Tekan Enter untuk bersiap...]")
+
+    print("\n==========================================")
+    typeplay("           TUTORIAL SELESAI\n")
+    print("==========================================\n")
+    while True:
+        lanjut_ulang_sequence = input("Tekan [Enter] untuk memulai! Ketik [Ulang] untuk melihat ulang tutorial: ")
+        if lanjut_ulang_sequence == "":
+            return True
+        elif lanjut_ulang_sequence.lower() == "ulang":
+            sequence_tutorial()
+        else:
+            print("Input tidak dikenal! Silahkan hanya tekan Enter atau ketik 'Ulang'.")

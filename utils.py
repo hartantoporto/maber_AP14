@@ -1,5 +1,6 @@
 from pyfiglet import Figlet
 
+from database.user import logout
 from ui_utils import line, space, text_left
 
 
@@ -10,7 +11,8 @@ def main_menu():
         text_left("Menu Utama:")
         text_left("1. Mulai Permainan ⚔️")
         text_left("2. Lihat Peringkat 🏆")
-        text_left("3. Keluar Aplikasi 🚪")
+        text_left("3. Ganti Akun 🔄️")
+        text_left("4. Keluar Aplikasi 🚪")
         space()
         choice = input("Pilih opsi (1-3): ")
         line()
@@ -22,6 +24,9 @@ def main_menu():
             from rank.leaderboard import Show_LeaderBoard
             Show_LeaderBoard()
         elif choice == "3":
+            logout()
+            # Leaderboard
+        elif choice == "4":
             goodbye_banner()
             break
             
